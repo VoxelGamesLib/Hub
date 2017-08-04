@@ -4,10 +4,12 @@ import com.google.inject.Singleton;
 
 import com.voxelgameslib.voxelgameslib.game.GameHandler;
 import com.voxelgameslib.voxelgameslib.game.GameMode;
+import com.voxelgameslib.voxelgameslib.lang.LangHandler;
 import com.voxelgameslib.voxelgameslib.module.Module;
 import com.voxelgameslib.voxelgameslib.module.ModuleHandler;
 import com.voxelgameslib.voxelgameslib.module.ModuleInfo;
 
+import java.io.File;
 import javax.inject.Inject;
 
 import org.bukkit.plugin.java.JavaPlugin;
@@ -20,6 +22,8 @@ public class HubPlugin extends JavaPlugin implements Module {
 
     @Inject
     private GameHandler gameHandler;
+    @Inject
+    private LangHandler langHandler;
 
     @Override
     public void onLoad() {
@@ -29,6 +33,7 @@ public class HubPlugin extends JavaPlugin implements Module {
     @Override
     public void enable() {
         gameHandler.registerGameMode(GAMEMODE);
+        langHandler.registerExternalLangProvider(HubLangKey.DUMMY, new File(getDataFolder(), "lang"));
     }
 
     @Override

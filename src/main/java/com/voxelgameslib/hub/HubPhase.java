@@ -2,7 +2,12 @@ package com.voxelgameslib.hub;
 
 import com.voxelgameslib.voxelgameslib.feature.features.AutoRespawnFeature;
 import com.voxelgameslib.voxelgameslib.feature.features.GameModeFeature;
+import com.voxelgameslib.voxelgameslib.feature.features.HealFeature;
 import com.voxelgameslib.voxelgameslib.feature.features.MapFeature;
+import com.voxelgameslib.voxelgameslib.feature.features.NoBlockBreakFeature;
+import com.voxelgameslib.voxelgameslib.feature.features.NoBlockPlaceFeature;
+import com.voxelgameslib.voxelgameslib.feature.features.NoDamageFeature;
+import com.voxelgameslib.voxelgameslib.feature.features.NoHungerLossFeature;
 import com.voxelgameslib.voxelgameslib.feature.features.SpawnFeature;
 import com.voxelgameslib.voxelgameslib.phase.AbstractPhase;
 
@@ -36,5 +41,23 @@ public class HubPhase extends AbstractPhase {
 
         AutoRespawnFeature autoRespawnFeature = getGame().createFeature(AutoRespawnFeature.class, this);
         addFeature(autoRespawnFeature);
+
+        LadderKingFeature ladderKingFeature = getGame().createFeature(LadderKingFeature.class, this);
+        addFeature(ladderKingFeature);
+
+        NoDamageFeature noDamageFeature = getGame().createFeature(NoDamageFeature.class, this);
+        addFeature(noDamageFeature);
+
+        NoBlockBreakFeature noBlockBreakFeature = getGame().createFeature(NoBlockBreakFeature.class, this);
+        addFeature(noBlockBreakFeature);
+
+        NoBlockPlaceFeature noBlockPlaceFeature = getGame().createFeature(NoBlockPlaceFeature.class, this);
+        addFeature(noBlockPlaceFeature);
+
+        NoHungerLossFeature noHungerLossFeature = getGame().createFeature(NoHungerLossFeature.class, this);
+        addFeature(noHungerLossFeature);
+
+        HealFeature healFeature = getGame().createFeature(HealFeature.class, this);
+        addFeature(healFeature);
     }
 }
