@@ -6,7 +6,7 @@ plugins {
 
 import org.apache.tools.ant.filters.ReplaceTokens
 
-group 'io.indices'
+group 'com.voxelgameslib'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
@@ -20,19 +20,15 @@ repositories {
     maven { url 'https://hub.spigotmc.org/nexus/content/groups/public/' }
     maven { url 'https://oss.sonatype.org/content/groups/public/' }
     maven { url 'https://nexus.indices.io/content/groups/public/' }
-    maven { url 'http://repo.onarandombox.com/content/groups/public/' }
-    maven { url 'http://repo.dmulloy2.net/content/groups/public/' }
-    maven { url "http://repo.inventivetalent.org/content/repositories/snapshots/" }
+    maven { url "http://repo.onarandombox.com/content/groups/public/" }
 }
 
 dependencies {
-    compile group: 'net.kyori', name: 'text', version: '1.12-SNAPSHOT', changing: true
-
     testCompile group: 'junit', name: 'junit', version: '4.12'
 
     compileOnly group: 'org.spigotmc', name: 'spigot-api', version: '1.12-R0.1-SNAPSHOT'
     compileOnly group: 'com.voxelgameslib', name: 'voxelgameslib', version: '2.0-SNAPSHOT', changing: true
-    compileOnly group: 'com.comphenix.protocol', name: 'ProtocolLib', version: '4.2.1'
+    compileOnly group: 'org.projectlombok', name: 'lombok', 'version': '1.16.0'
 }
 
 processResources {
@@ -41,9 +37,14 @@ processResources {
     ]
 }
 
+compileJava {
+    options.compilerArgs += ["-parameters"]
+    options.fork = true
+    options.forkOptions.executable = 'javac'
+}
 
 task copyToServer(dependsOn: 'jar', type: Copy) {
-    from 'build/libs/psychic-adventure-' + project.version + '.jar'
+    from 'build/libs/hub-1.0-SNAPSHOT.jar'
     into '../testserver/plugins/'
 }
 
@@ -57,11 +58,9 @@ task sourcesJar(type: Jar) {
     from sourceSets.main.allSource
 }
 
-if (!project.hasProperty("dev")) {
-    artifacts {
-        archives javadocJar
-        archives sourcesJar
-    }
+artifacts {
+    archives javadocJar
+    archives sourcesJar
 }
 
 signing {
@@ -90,13 +89,13 @@ if (project.hasProperty('indicesUsername') && project.hasProperty('indicesPasswo
 
                     issueManagement {
                         system 'GitHub Issues'
-                        url 'https://github.com/itsaphel/psychic-adventure/issues'
+                        url 'https://github.com/VoxelGamesLib/hub/issues'
                     }
 
                     scm {
-                        connection 'scm:git@github.com:itsaphel/psychic-adventure.git'
-                        developerConnection 'scm:git@github.com:itsaphel/psychic-adventure.git'
-                        url 'https://github.com/itsaphel/psychic-adventure/'
+                        connection 'scm:git@github.com:VoxelGamesLib/hub.git'
+                        developerConnection 'scm:git@github.com:VoxelGamesLib/hub.git'
+                        url 'https://github.com/VoxelGamesLib/hub/'
                     }
                 }
             }
