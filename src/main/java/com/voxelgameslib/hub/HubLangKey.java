@@ -46,11 +46,13 @@ public enum HubLangKey implements ExternalTranslatable {
     }
 
     @Override
+    @Nonnull
     public UUID getUuid() {
         return uuid;
     }
 
     @Override
+    @Nonnull
     public Translatable[] getValues() {
         return values();
     }

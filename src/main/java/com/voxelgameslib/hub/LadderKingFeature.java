@@ -9,6 +9,7 @@ import com.voxelgameslib.voxelgameslib.user.UserHandler;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
+import javax.annotation.Nonnull;
 import javax.inject.Inject;
 
 import org.bukkit.Bukkit;
@@ -52,7 +53,7 @@ public class LadderKingFeature extends AbstractFeature {
     }
 
     @GameEvent
-    public void onPlayerMove(final PlayerMoveEvent e, User user) {
+    public void onPlayerMove(@Nonnull final PlayerMoveEvent e, @Nonnull User user) {
         if (e.getTo().getBlock() != null && e.getTo().getBlock().getType() == Material.GOLD_PLATE) {
             if (king == null || !e.getPlayer().getUniqueId().equals(king.getUuid())) {
                 if (king == null) {
@@ -92,7 +93,7 @@ public class LadderKingFeature extends AbstractFeature {
     }
 
     @EventHandler(priority = EventPriority.MONITOR)
-    public void onPvP(final EntityDamageByEntityEvent e) {
+    public void onPvP(@Nonnull final EntityDamageByEntityEvent e) {
         if (e.getEntity() instanceof Player && e.getDamager() instanceof Player && king != null) {
             User damager = userHandler.getUser((e.getDamager()).getUniqueId()).orElseThrow(() -> new UserException("Unknown user " + e.getDamager().getUniqueId()));
             User damaged = userHandler.getUser((e.getEntity()).getUniqueId()).orElseThrow(() -> new UserException("Unknown user " + e.getDamager().getUniqueId()));
