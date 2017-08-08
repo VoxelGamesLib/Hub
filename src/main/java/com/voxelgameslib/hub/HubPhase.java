@@ -1,8 +1,10 @@
 package com.voxelgameslib.hub;
 
 import com.voxelgameslib.voxelgameslib.feature.features.AutoRespawnFeature;
+import com.voxelgameslib.voxelgameslib.feature.features.DoubleJumpFeature;
 import com.voxelgameslib.voxelgameslib.feature.features.GameModeFeature;
 import com.voxelgameslib.voxelgameslib.feature.features.HealFeature;
+import com.voxelgameslib.voxelgameslib.feature.features.JumpPadFeature;
 import com.voxelgameslib.voxelgameslib.feature.features.MapFeature;
 import com.voxelgameslib.voxelgameslib.feature.features.NoBlockBreakFeature;
 import com.voxelgameslib.voxelgameslib.feature.features.NoBlockPlaceFeature;
@@ -59,5 +61,11 @@ public class HubPhase extends AbstractPhase {
 
         HealFeature healFeature = getGame().createFeature(HealFeature.class, this);
         addFeature(healFeature);
+
+        DoubleJumpFeature doubleJumpFeature = getGame().createFeature(DoubleJumpFeature.class, this);
+        addFeature(doubleJumpFeature);
+
+        JumpPadFeature jumpPadFeature = getGame().createFeature(JumpPadFeature.class, this);
+        addFeature(jumpPadFeature);
     }
 }
