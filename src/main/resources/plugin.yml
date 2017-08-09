@@ -1,0 +1,5 @@
+name: PsychicAdventure
+version: @version@
+main: io.indices.psychicadventure.PsychicAdventurePlugin
+author: aphel
+depend: [VoxelGamesLib]
