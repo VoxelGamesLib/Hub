@@ -6,14 +6,17 @@ import com.voxelgameslib.voxelgameslib.feature.features.GameModeFeature;
 import com.voxelgameslib.voxelgameslib.feature.features.HealFeature;
 import com.voxelgameslib.voxelgameslib.feature.features.JumpPadFeature;
 import com.voxelgameslib.voxelgameslib.feature.features.MapFeature;
+import com.voxelgameslib.voxelgameslib.feature.features.MobFeature;
 import com.voxelgameslib.voxelgameslib.feature.features.NoBlockBreakFeature;
 import com.voxelgameslib.voxelgameslib.feature.features.NoBlockPlaceFeature;
 import com.voxelgameslib.voxelgameslib.feature.features.NoDamageFeature;
 import com.voxelgameslib.voxelgameslib.feature.features.NoHungerLossFeature;
 import com.voxelgameslib.voxelgameslib.feature.features.SpawnFeature;
+import com.voxelgameslib.voxelgameslib.feature.features.TimeFeature;
 import com.voxelgameslib.voxelgameslib.phase.AbstractPhase;
 
 import org.bukkit.GameMode;
+import org.bukkit.entity.EntityType;
 
 public class HubPhase extends AbstractPhase {
 
@@ -67,5 +70,12 @@ public class HubPhase extends AbstractPhase {
 
         JumpPadFeature jumpPadFeature = getGame().createFeature(JumpPadFeature.class, this);
         addFeature(jumpPadFeature);
+
+        TimeFeature timeFeature = getGame().createFeature(TimeFeature.class, this);
+        addFeature(timeFeature);
+
+        MobFeature mobFeature = getGame().createFeature(MobFeature.class, this);
+        mobFeature.addWhitelist(EntityType.SHEEP, EntityType.COW, EntityType.CHICKEN);
+        addFeature(mobFeature);
     }
 }
