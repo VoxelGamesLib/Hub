@@ -1,6 +1,7 @@
 package com.voxelgameslib.hub;
 
 import com.voxelgameslib.voxelgameslib.feature.features.AutoRespawnFeature;
+import com.voxelgameslib.voxelgameslib.feature.features.ClearInventoryFeature;
 import com.voxelgameslib.voxelgameslib.feature.features.DoubleJumpFeature;
 import com.voxelgameslib.voxelgameslib.feature.features.GameModeFeature;
 import com.voxelgameslib.voxelgameslib.feature.features.HealFeature;
@@ -77,5 +78,8 @@ public class HubPhase extends AbstractPhase {
         MobFeature mobFeature = getGame().createFeature(MobFeature.class, this);
         mobFeature.addWhitelist(EntityType.SHEEP, EntityType.COW, EntityType.CHICKEN);
         addFeature(mobFeature);
+
+        ClearInventoryFeature clearInventoryFeature = getGame().createFeature(ClearInventoryFeature.class, this);
+        addFeature(clearInventoryFeature);
     }
 }
