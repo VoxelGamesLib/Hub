@@ -2,15 +2,15 @@ package com.voxelgameslib.hub;
 
 import com.google.inject.Singleton;
 
+import java.io.File;
+import javax.inject.Inject;
+
 import com.voxelgameslib.voxelgameslib.game.GameHandler;
 import com.voxelgameslib.voxelgameslib.game.GameMode;
 import com.voxelgameslib.voxelgameslib.lang.LangHandler;
 import com.voxelgameslib.voxelgameslib.module.Module;
 import com.voxelgameslib.voxelgameslib.module.ModuleHandler;
 import com.voxelgameslib.voxelgameslib.module.ModuleInfo;
-
-import java.io.File;
-import javax.inject.Inject;
 
 import org.bukkit.plugin.java.JavaPlugin;
 

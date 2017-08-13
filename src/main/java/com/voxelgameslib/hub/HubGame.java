@@ -1,10 +1,10 @@
 package com.voxelgameslib.hub;
 
+import javax.annotation.Nonnull;
+
 import com.voxelgameslib.voxelgameslib.game.AbstractGame;
 import com.voxelgameslib.voxelgameslib.game.GameDefinition;
 import com.voxelgameslib.voxelgameslib.game.GameInfo;
-
-import javax.annotation.Nonnull;
 
 @GameInfo(name = "Hub", author = "MiniDigger", version = "v1.0", description = "Hub Description")
 public class HubGame extends AbstractGame {
