@@ -18,7 +18,7 @@ cp -R build/libs/. deploy-stuff/Hub
 
 # create mvn repo
 mkdir deploy-stuff/mvn-repo/
-mvn deploy:deploy-file -Dfile=build/libs/Hub-1.0-SNAPSHOT.jar -DpomFile=pom.xml  -Durl=file://${TRAVIS_BUILD_DIR}/deploy-stuff/mvn-repo
+mvn deploy:deploy-file -Dfile=build/libs/hub-1.0-SNAPSHOT.jar -DpomFile=pom.xml  -Durl=file://${TRAVIS_BUILD_DIR}/deploy-stuff/mvn-repo
 
 # deploy
 echo "commit repo"
