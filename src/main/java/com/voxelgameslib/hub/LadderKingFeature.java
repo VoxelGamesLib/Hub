@@ -38,12 +38,12 @@ public class LadderKingFeature extends AbstractFeature {
     }
 
     @Override
-    public void start() {
+    public void enable() {
 
     }
 
     @Override
-    public void stop() {
+    public void disable() {
 
     }
 
@@ -86,7 +86,7 @@ public class LadderKingFeature extends AbstractFeature {
                     getPhase().getGame().broadcastMessage(HubLangKey.LADDERKING_LEFT_THRONE, king.getRawDisplayName());
                     king = null;
                 } else {
-                    start();
+                    enable();
                 }
             }
         }, 5 * 20));
