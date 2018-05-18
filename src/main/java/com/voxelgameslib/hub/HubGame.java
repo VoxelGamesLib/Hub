@@ -15,7 +15,7 @@ public class HubGame extends AbstractGame {
 
     @Override
     public void initGameFromModule() {
-        setMinPlayers(Integer.MAX_VALUE);
+        setMinPlayers(0);
         setMaxPlayers(Integer.MAX_VALUE);
 
         activePhase = createPhase(HubPhase.class);
