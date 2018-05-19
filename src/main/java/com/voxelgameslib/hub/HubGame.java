@@ -29,4 +29,9 @@ public class HubGame extends AbstractGame {
 
         loadMap("Hub");
     }
+
+    @Override
+    public void endPhase() {
+        // NOP
+    }
 }
