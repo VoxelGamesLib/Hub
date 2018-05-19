@@ -26,7 +26,7 @@ public class HubPhase extends AbstractPhase {
         setName("HubPhase");
         super.init();
         setAllowJoin(true);
-        setAllowSpectate(true);
+        setAllowSpectate(false);
 
         MapFeature mapFeature = getGame().createFeature(MapFeature.class, this);
         mapFeature.setShouldUnload(true);
