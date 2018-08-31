@@ -54,7 +54,7 @@ public class LadderKingFeature extends AbstractFeature {
 
     @GameEvent
     public void onPlayerMove(@Nonnull final PlayerMoveEvent e, @Nonnull User user) {
-        if (e.getTo().getBlock() != null && e.getTo().getBlock().getType() == Material.GOLD_PLATE) {
+        if (e.getTo().getBlock() != null && e.getTo().getBlock().getType() == Material.HEAVY_WEIGHTED_PRESSURE_PLATE) {
             if (king == null || !e.getPlayer().getUniqueId().equals(king.getUuid())) {
                 if (king == null) {
                     getPhase().getGame().broadcastMessage(HubLangKey.LADDERKING_NEW, user.getRawDisplayName());
@@ -82,7 +82,8 @@ public class LadderKingFeature extends AbstractFeature {
                 if (king == null) {
                     return;
                 }
-                if (king.getPlayer().getLocation().getBlock() == null || king.getPlayer().getLocation().getBlock().getType() != Material.GOLD_PLATE) {
+                if (king.getPlayer().getLocation().getBlock() == null ||
+                        king.getPlayer().getLocation().getBlock().getType() != Material.HEAVY_WEIGHTED_PRESSURE_PLATE) {
                     getPhase().getGame().broadcastMessage(HubLangKey.LADDERKING_LEFT_THRONE, king.getRawDisplayName());
                     king = null;
                 } else {
@@ -95,8 +96,10 @@ public class LadderKingFeature extends AbstractFeature {
     @EventHandler(priority = EventPriority.MONITOR)
     public void onPvP(@Nonnull final EntityDamageByEntityEvent e) {
         if (e.getEntity() instanceof Player && e.getDamager() instanceof Player && king != null) {
-            User damager = userHandler.getUser((e.getDamager()).getUniqueId()).orElseThrow(() -> new UserException("Unknown user " + e.getDamager().getUniqueId()));
-            User damaged = userHandler.getUser((e.getEntity()).getUniqueId()).orElseThrow(() -> new UserException("Unknown user " + e.getDamager().getUniqueId()));
+            User damager = userHandler.getUser((e.getDamager()).getUniqueId()).orElseThrow(() ->
+                    new UserException("Unknown user " + e.getDamager().getUniqueId()));
+            User damaged = userHandler.getUser((e.getEntity()).getUniqueId()).orElseThrow(() ->
+                    new UserException("Unknown user " + e.getDamager().getUniqueId()));
 
             if (getPhase().getGame().isParticipating(damaged.getUuid()) && getPhase().getGame().isParticipating(damager.getUuid())) {
                 if (damager.getUuid().equals(king.getUuid())) {
