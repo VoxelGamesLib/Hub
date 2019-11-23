@@ -7,10 +7,10 @@ import javax.inject.Inject;
 
 import com.voxelgameslib.voxelgameslib.api.game.GameHandler;
 import com.voxelgameslib.voxelgameslib.api.game.GameMode;
-import com.voxelgameslib.voxelgameslib.internal.lang.LangHandler;
 import com.voxelgameslib.voxelgameslib.api.module.Module;
 import com.voxelgameslib.voxelgameslib.api.module.ModuleHandler;
 import com.voxelgameslib.voxelgameslib.api.module.ModuleInfo;
+import com.voxelgameslib.voxelgameslib.internal.lang.LangHandler;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
