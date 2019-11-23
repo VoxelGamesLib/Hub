@@ -2,7 +2,7 @@ package com.voxelgameslib.hub;
 
 import java.util.logging.Logger;
 
-import com.voxelgameslib.voxelgameslib.feature.AbstractFeature;
+import com.voxelgameslib.voxelgameslib.api.feature.AbstractFeature;
 
 public class HubFeature extends AbstractFeature {
 

@@ -1,20 +1,20 @@
 package com.voxelgameslib.hub;
 
-import com.voxelgameslib.voxelgameslib.feature.features.AutoRespawnFeature;
-import com.voxelgameslib.voxelgameslib.feature.features.ClearInventoryFeature;
-import com.voxelgameslib.voxelgameslib.feature.features.DoubleJumpFeature;
-import com.voxelgameslib.voxelgameslib.feature.features.GameModeFeature;
-import com.voxelgameslib.voxelgameslib.feature.features.HealFeature;
-import com.voxelgameslib.voxelgameslib.feature.features.JumpPadFeature;
-import com.voxelgameslib.voxelgameslib.feature.features.MapFeature;
-import com.voxelgameslib.voxelgameslib.feature.features.MobFeature;
-import com.voxelgameslib.voxelgameslib.feature.features.NoBlockBreakFeature;
-import com.voxelgameslib.voxelgameslib.feature.features.NoBlockPlaceFeature;
-import com.voxelgameslib.voxelgameslib.feature.features.NoDamageFeature;
-import com.voxelgameslib.voxelgameslib.feature.features.NoHungerLossFeature;
-import com.voxelgameslib.voxelgameslib.feature.features.SpawnFeature;
-import com.voxelgameslib.voxelgameslib.feature.features.TimeFeature;
-import com.voxelgameslib.voxelgameslib.phase.AbstractPhase;
+import com.voxelgameslib.voxelgameslib.api.feature.features.AutoRespawnFeature;
+import com.voxelgameslib.voxelgameslib.api.feature.features.ClearInventoryFeature;
+import com.voxelgameslib.voxelgameslib.api.feature.features.DoubleJumpFeature;
+import com.voxelgameslib.voxelgameslib.api.feature.features.GameModeFeature;
+import com.voxelgameslib.voxelgameslib.api.feature.features.HealFeature;
+import com.voxelgameslib.voxelgameslib.api.feature.features.JumpPadFeature;
+import com.voxelgameslib.voxelgameslib.api.feature.features.MapFeature;
+import com.voxelgameslib.voxelgameslib.api.feature.features.MobFeature;
+import com.voxelgameslib.voxelgameslib.api.feature.features.NoBlockBreakFeature;
+import com.voxelgameslib.voxelgameslib.api.feature.features.NoBlockPlaceFeature;
+import com.voxelgameslib.voxelgameslib.api.feature.features.NoDamageFeature;
+import com.voxelgameslib.voxelgameslib.api.feature.features.NoHungerLossFeature;
+import com.voxelgameslib.voxelgameslib.api.feature.features.SpawnFeature;
+import com.voxelgameslib.voxelgameslib.api.feature.features.TimeFeature;
+import com.voxelgameslib.voxelgameslib.api.phase.AbstractPhase;
 
 import org.bukkit.GameMode;
 import org.bukkit.entity.EntityType;

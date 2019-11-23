@@ -6,11 +6,11 @@ import java.util.UUID;
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
 
-import com.voxelgameslib.voxelgameslib.event.GameEvent;
-import com.voxelgameslib.voxelgameslib.exception.UserException;
-import com.voxelgameslib.voxelgameslib.feature.AbstractFeature;
-import com.voxelgameslib.voxelgameslib.user.User;
-import com.voxelgameslib.voxelgameslib.user.UserHandler;
+import com.voxelgameslib.voxelgameslib.api.event.GameEvent;
+import com.voxelgameslib.voxelgameslib.api.exception.UserException;
+import com.voxelgameslib.voxelgameslib.api.feature.AbstractFeature;
+import com.voxelgameslib.voxelgameslib.components.user.User;
+import com.voxelgameslib.voxelgameslib.components.user.UserHandler;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
